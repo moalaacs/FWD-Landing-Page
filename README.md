@@ -14,6 +14,6 @@ This landing page contains:
 
 ## Resources
 
-https://developer.mozilla.org/
-https://fonts.google.com/specimen/Fira+Sans
+- https://developer.mozilla.org/
+- https://fonts.google.com/specimen/Fira+Sans
 
