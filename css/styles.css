@@ -108,6 +108,11 @@ section {
   }
 }
 
+.navbar__menu .your-active-li {
+  color: rgb(92, 167, 130);
+  border-bottom: 2px solid rgb(92, 167, 130);
+}
+
 .navbar__menu .menu__link {
   display: block;
   padding: 1em;
