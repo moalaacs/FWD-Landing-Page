@@ -33,23 +33,23 @@ const myUl = document.getElementById("navbar__list");
 */
 
 // build the nav fucnction
-function navBuilder(){
-    allSections.forEach((section)=> {
-        let aAttribute = document.createElement("a");
-        let newLink = document.createElement("li");
+function navBuilder() {
+    allSections.forEach((section) => {
+        const aAttribute = document.createElement("a");
+        const newLink = document.createElement("li");
         aAttribute.textContent = section.getAttribute("data-nav");
         aAttribute.setAttribute('linktosec', section.getAttribute("id"));
         newLink.appendChild(aAttribute);
         myUl.appendChild(newLink);
     })
-    let activeLi = document.querySelector("a");
-    activeLi.setAttribute('class',"your-active-li");
+    const activeLi = document.querySelector("a");
+    activeLi.setAttribute('class', "your-active-li");
 }
 
 // Check if the target section is near top of viewport ?
 function viewportChecker(targetSection) {
-    let sectionView = targetSection.getBoundingClientRect();
-    if(sectionView.top >= -50 && sectionView.top < 394){
+    const sectionView = targetSection.getBoundingClientRect();
+    if (sectionView.top >= -50 && sectionView.top < 394) {
         return true;
     } else {
         return false;
@@ -58,32 +58,32 @@ function viewportChecker(targetSection) {
 
 // Set active class to target section.
 function setActiveClass() {
-    for (section of allSections){
-        if (viewportChecker(section) == true){
+    for (section of allSections) {
+        if (viewportChecker(section) == true) {
             if (!section.classList.contains('your-active-class')) {
-                var activeSec = document.getElementsByClassName('your-active-class')[0];
+                const activeSec = document.getElementsByClassName('your-active-class')[0];
                 activeSec.classList.remove('your-active-class')
-                section.classList.add('your-active-class'); 
+                section.classList.add('your-active-class');
             }
-            }
-        }     
+        }
     }
+}
 
 
 // Set active class to target li.
 function setActiveLi() {
     const allLinks = document.querySelectorAll("a");
-    var activeSection = document.getElementsByClassName('your-active-class')[0];
+    const activeSection = document.getElementsByClassName('your-active-class')[0];
     console.log(activeSection);
-        allLinks.forEach((link)=> {
-            if (link.getAttribute("linktosec") == activeSection.getAttribute("id")) {
-                if (!link.classList.contains('your-active-li')) {
-                    var activeLi = document.getElementsByClassName('your-active-li')[0];
-                    activeLi.classList.remove('your-active-li')
-                    link.classList.add('your-active-li'); 
-                }
+    allLinks.forEach((link) => {
+        if (link.getAttribute("linktosec") == activeSection.getAttribute("id")) {
+            if (!link.classList.contains('your-active-li')) {
+                const activeLi = document.getElementsByClassName('your-active-li')[0];
+                activeLi.classList.remove('your-active-li')
+                link.classList.add('your-active-li');
             }
-    })      
+        }
+    })
 }
 
 /**
@@ -97,10 +97,10 @@ navBuilder();
 
 // Scroll to section on link click
 const allLinks = document.querySelectorAll("a");
-allLinks.forEach((link)=>{
-    link.addEventListener("click", ()=>{
-        let targetSection = document.getElementById(link.getAttribute("linkToSec"));
-        targetSection.scrollIntoView({behavior:"smooth"});
+allLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+        const targetSection = document.getElementById(link.getAttribute("linkToSec"));
+        targetSection.scrollIntoView({ behavior: "smooth" });
     })
 })
 
